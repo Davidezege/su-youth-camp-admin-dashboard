@@ -45,7 +45,6 @@ export async function fetchPilgrims({ signal } = {}) {
   }
 
   const payload = await response.json();
-  console.log(payload)
   const list = Array.isArray(payload) ? payload : payload?.data || payload?.results || [];
   return normalizeList(list);
 }

@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar/SearchBar.jsx';
 import FilterDropdown from './components/FilterDropdown/FilterDropdown.jsx';
 import IconButton from './components/IconButton/IconButton.jsx';
 import PilgrimTable from './components/PilgrimTable/PilgrimTable.jsx';
+import CategorySummary from './components/CategorySummary/CategorySummary.jsx';
 import Pagination from './components/Pagination/Pagination.jsx';
 import LoadingState from './components/StatusStates/LoadingState.jsx';
 import ErrorState from './components/StatusStates/ErrorState.jsx';
@@ -41,6 +42,27 @@ export default function App() {
       return matchesSearch && matchesCategory;
     });
   }, [pilgrims, searchTerm, categoryFilter]);
+
+  const categorySummary = useMemo(() => {
+    const stats = new Map();
+
+    filtered.forEach((record) => {
+      splitCategories(record.category).forEach((category) => {
+        const existing = stats.get(category) || { total: 0, male: 0, female: 0 };
+        existing.total += 1;
+        if (record.gender === 'Male') {
+          existing.male += 1;
+        } else if (record.gender === 'Female') {
+          existing.female += 1;
+        }
+        stats.set(category, existing);
+      });
+    });
+
+    return Array.from(stats, ([category, counts]) => ({ category, ...counts })).sort((a, b) =>
+      a.category.localeCompare(b.category)
+    );
+  }, [filtered]);
 
   const sorted = useMemo(() => {
     const { key, direction } = sortConfig;
@@ -104,6 +126,7 @@ export default function App() {
               totalRows={sorted.length}
               rowsPerPage={ROWS_PER_PAGE}
             />
+            <CategorySummary items={categorySummary} />
           </>
         )}
       </div>
