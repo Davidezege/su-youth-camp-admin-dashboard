@@ -1,0 +1,39 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.mint {
+  background: var(--tag-mint-bg);
+  color: var(--tag-mint-text);
+}
+.teal {
+  background: var(--tag-teal-bg);
+  color: var(--tag-teal-text);
+}
+.amber {
+  background: var(--tag-amber-bg);
+  color: var(--tag-amber-text);
+}
+.coral {
+  background: var(--tag-coral-bg);
+  color: var(--tag-coral-text);
+}
+.indigo {
+  background: var(--tag-indigo-bg);
+  color: var(--tag-indigo-text);
+}
+.lilac {
+  background: var(--tag-lilac-bg);
+  color: var(--tag-lilac-text);
+}
+.neutral {
+  background: var(--color-sage-light);
+  color: var(--color-slate);
+}

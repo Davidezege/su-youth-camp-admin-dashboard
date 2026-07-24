@@ -1,0 +1,71 @@
+:root {
+  /* Color palette — green, harmonized */
+  --color-mist: #f2faf6;       /* page background */
+  --color-surface: #ffffff;    /* card/table surface */
+  --color-ink: #0e2b20;        /* headings / primary text */
+  --color-slate: #5c7268;      /* secondary / muted text */
+  --color-forest: #0f7a4e;     /* primary brand green */
+  --color-forest-dark: #0b5c3a;
+  --color-sprout: #2fbe8b;     /* bright accent green */
+  --color-sage: #d9e9df;       /* borders / dividers */
+  --color-sage-light: #eef6f1; /* zebra / hover backgrounds */
+
+  /* Tag / category palette (soft pastels, green-harmonized) */
+  --tag-mint-bg: #e3f6ec;   --tag-mint-text: #0f7a4e;
+  --tag-teal-bg: #dff3f1;   --tag-teal-text: #0e7c72;
+  --tag-amber-bg: #fdf1dd;  --tag-amber-text: #9a6510;
+  --tag-coral-bg: #fdeaea; --tag-coral-text: #b8483f;
+  --tag-indigo-bg: #e9ebfb; --tag-indigo-text: #4a4fc4;
+  --tag-lilac-bg: #f2e9fb; --tag-lilac-text: #7a45b0;
+
+  --font-display: "Manrope", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-card: 0 20px 45px -25px rgba(15, 61, 46, 0.35);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(180deg, #e9f6ee 0%, var(--color-mist) 320px, var(--color-mist) 100%);
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+button, input, select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
+}
+
+#root {
+  min-height: 100vh;
+}
