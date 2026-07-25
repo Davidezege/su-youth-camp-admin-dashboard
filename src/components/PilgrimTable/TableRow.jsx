@@ -48,6 +48,10 @@ export default function TableRow({ record }) {
           {record.additionalInfo === 'none' ? 'none' : truncate(record.additionalInfo, 48)}
         </span>
       </td>
+
+      <td className={styles.cell}>
+        <span className={styles.groupBadge}>{record.community === 'none' ? 'none' : record.community}</span>
+      </td>
     </tr>
   );
 }

@@ -11,10 +11,11 @@ export const TABLE_COLUMNS = [
   { key: 'pilgrimGroup', label: 'Pilgrim Group', sortable: true, width: '150px' },
   { key: 'phone', label: 'Phone', sortable: false, width: '160px' },
   { key: 'additionalInfo', label: 'Additional Info', sortable: false, width: 'auto' },
+  { key: 'community', label: 'Community', sortable: true, width: '110px' },
 ];
 
 /** Fields that can be searched via the search bar. */
-export const SEARCHABLE_FIELDS = ['fullName', 'campId', 'phone', 'schoolName'];
+export const SEARCHABLE_FIELDS = ['fullName', 'campId', 'phone', 'schoolName', 'community'];
 
 /** The full, expected shape of a record coming from the backend. */
 export const PILGRIM_FIELDS = [
@@ -26,4 +27,5 @@ export const PILGRIM_FIELDS = [
   'schoolName',
   'phone',
   'additionalInfo',
+  'community',
 ];
