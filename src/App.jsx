@@ -3,6 +3,7 @@ import Header from './components/Header/Header.jsx';
 import SearchBar from './components/SearchBar/SearchBar.jsx';
 import FilterDropdown from './components/FilterDropdown/FilterDropdown.jsx';
 import IconButton from './components/IconButton/IconButton.jsx';
+import ExportToExcelButton from './components/ExportToExcelButton/ExportToExcelButton.jsx';
 import PilgrimTable from './components/PilgrimTable/PilgrimTable.jsx';
 import CategorySummary from './components/CategorySummary/CategorySummary.jsx';
 import Pagination from './components/Pagination/Pagination.jsx';
@@ -105,7 +106,10 @@ export default function App() {
       <div className="card">
         <div className="cardTop">
           <Header total={pilgrims.length} />
-          <IconButton label="Refresh records" onClick={reload} spinning={status === 'loading'} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <ExportToExcelButton endpoint="/api/export-excel" />
+            <IconButton label="Refresh records" onClick={reload} spinning={status === 'loading'} />
+          </div>
         </div>
 
         <div className="toolbar">
