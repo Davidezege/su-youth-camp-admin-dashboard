@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar/SearchBar.jsx';
 import FilterDropdown from './components/FilterDropdown/FilterDropdown.jsx';
 import IconButton from './components/IconButton/IconButton.jsx';
 import ExportToExcelButton from './components/ExportToExcelButton/ExportToExcelButton.jsx';
+import ExportToPdfButton from './components/ExportToPdfButton/ExportToPdfButton.jsx';
 import PilgrimTable from './components/PilgrimTable/PilgrimTable.jsx';
 import CategorySummary from './components/CategorySummary/CategorySummary.jsx';
 import Pagination from './components/Pagination/Pagination.jsx';
@@ -106,8 +107,9 @@ export default function App() {
       <div className="card">
         <div className="cardTop">
           <Header total={pilgrims.length} />
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <ExportToExcelButton endpoint="/api/export-excel" />
+            <ExportToPdfButton data={sorted.length > 0 ? sorted : pilgrims} summaryData={categorySummary} />
             <IconButton label="Refresh records" onClick={reload} spinning={status === 'loading'} />
           </div>
         </div>
